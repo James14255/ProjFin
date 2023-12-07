@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    {% extends "app/layout.html" %}
+    {% block content %}
+        {% load staticfiles %}
+
+        <h2>Ссылки</h2>
+        <h3>Проверь, пойдёт ли игра на твоём ПК</h3><br />
+        <a href ="https://technical.city/ru/can-i-run-it" target="_blank"> <img src="{% static 'app/content/logolink1.PNG' %}" alt="Logo 1"/></a><br />
+        <h3>Сайт с новостями про видеоигры</h3><br />
+        <a href ="https://stopgame.ru" target="_blank"> <img src="{% static 'app/content/logolink2.PNG' %}" alt="Logo 2"/></a><br />
+        <h3>Сайт с модами</h3><br />
+        <a href ="https://www.nexusmods.com" target="_blank"> <img src="{% static 'app/content/logolink3.PNG' %}" alt="Logo 3"/></a><br />
+
+    {% endblock %}
+</body>
+</html>

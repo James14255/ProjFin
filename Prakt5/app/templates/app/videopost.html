@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+{% extends "app/layout.html" %}
+{% block content %}
+{% load staticfiles %}
+
+    <h1>Наши видео</h1>
+    <hr />
+    <div class="container">
+		<h1>Видео 1</h1>
+        <video src="{% static 'app/content/1vid.mp4'%}" controls="controls" width="400" height="300" poster=""></video>
+    </div>
+    <hr />
+    <div class="container">
+		<h1>Видео 2</h1>
+        <video src="{% static 'app/content/2vid.mp4'%}" controls="controls" width="400" height="300" poster=""></video>
+    </div>
+
+{% endblock %}
+</body>
+</html>

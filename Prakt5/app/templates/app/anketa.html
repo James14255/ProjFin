@@ -1,0 +1,57 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+{% if form != None %}
+<br><h2>Если у вас есть претензии по заказу вы можете отослать форму обратной связи.</h2><br />
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <label for="{{ form.name.id_for_label }}" id="name1">{{ form.name.label }}:</label>
+        {{ form.name }}<br /><br />
+        <label for="{{ form.city.id_for_label }}" >{{ form.city.label }}:</label>
+        {{ form.city }}<br />
+        <label for="{{ form.gender.id_for_label }}" >{{ form.gender.label }}:</label>
+        {{ form.gender }}
+        <label for="{{ form.email.id_for_label }}" >{{ form.email.label }}:</label>
+        {{ form.email }}<br /><br />
+        <label for="{{ form.message.id_for_label }}" >{{ form.message.label }}:</label><br />
+        {{ form.message }}<br /><br />
+        <button id="b1">Отправить</button>
+    </form>
+</div>
+{% else %}
+<br><h2>Благодарим за предоставленную информацию</h2>
+<h3>Вы сообщили о себе следующее:</h3>
+<ul>
+    <li><span>Имя: </span> {{ data.name }}<li />
+    <li><span>Ваш адрес: </span> {{ data.city }}<li />
+    <li><span>Пол: </span> {{ data.gender }}<li />
+    <li><span>Ваша почта: </span> {{ data.email }}<li />
+    <li><span>Дополнительная информация (О заказе и т.д.): </span> {{ data.message }}<li />
+<</ul>
+
+{% endif %}
+
+<script>
+
+function b1_mouseover()
+
+{
+    $('#b1').css('background-color', '#f0384a');
+}
+
+$('#b1').mouseover(b1_mouseover);
+
+</script>
+
+<script>
+
+function b1_mouseout()
+
+{
+    $('#b1').css('background-color', 'white');
+}
+
+$('#b1').mouseout(b1_mouseout);
+
+</script>
+{% endblock %}
